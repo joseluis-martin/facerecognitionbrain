@@ -65,6 +65,7 @@ class App extends Component {
     this.setState({imageUrl: this.state.input});
     fetch('https://warm-sea-05379.herokuapp.com/imageurl', {
       method: 'post',
+      mode: 'no-cors',
       headers: {'Content-Type': 'application/json'},
       body:JSON.stringify({
           input: this.state.user.input
@@ -75,6 +76,7 @@ class App extends Component {
         if (response) {
           fetch('https://warm-sea-05379.herokuapp.com/image', {
             method: 'put',
+            mode: 'no-cors',   
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify({
                 id: this.state.user.id
