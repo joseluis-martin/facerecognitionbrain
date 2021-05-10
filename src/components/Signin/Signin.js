@@ -19,7 +19,6 @@ class Signin extends React.Component {
     onSubmitSignin = () => {
         fetch('https://warm-sea-05379.herokuapp.com/signin', {
             method: 'post',
-            mode: 'no-cors',
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify({
                 email: this.state.sigInEmail,
